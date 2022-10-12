@@ -11,6 +11,47 @@ const db = mysql.createConnection({
 
 const prompt = inquirer.createPromptModule();
 
+function init() {
+  inquirer.prompt([
+      {
+          type: 'list',
+          message: 'make a selection',
+          name: 'options',
+          choices: [
+            'view all employees',
+            'add an employee',
+            'view all roles',
+            'add a role',
+              'view all departments',
+              'add a department',
+              'quit',
+          ],
+        }]).then((response) => {
+          switch (response.option) {
+              case 'view all employees':
+                  seeAllEmployees()
+                  break;
+              case 'add an employee':
+                  addEmployee()
+                  break;
+              case 'view all roles':
+                  seeAllRoles()
+                  break;
+              case 'add a role':
+                  addRole()
+                  break;
+              case 'view all departments':
+                  seeAllDepartments()
+                  break;
+              case 'add a department':
+                  addDepartment()
+                  break;
+              case 'quit':
+                  db.end();
+                }
+              })
+      };      
+
 const seeAllEmployees = () => {
   db.query(
     `SELECT employee.id AS id,
