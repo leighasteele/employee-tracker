@@ -9,7 +9,10 @@ const db = mysql.createConnection({
   database: "employees_db",
 });
 
-const prompt = inquirer.createPromptModule();
+db.connect(function(err){
+  if (err) throw err;
+      init();
+});
 
 function init() {
   inquirer.prompt([
