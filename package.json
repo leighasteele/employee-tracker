@@ -1,7 +1,25 @@
 {
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "file:.2.4",
+    "inquirer": "^8.2.4",
     "mysql2": "^2.3.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "employee-tracker",
+  "description": "## Description",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leighasteele/employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leighasteele/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/leighasteele/employee-tracker#readme"
 }
